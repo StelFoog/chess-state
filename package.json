@@ -1,0 +1,23 @@
+{
+  "name": "minimal-size-chess-state",
+  "version": "1.0.0",
+  "description": "MSCS is a way to store any legal state of chess wich can occur during a game as a 192-bit representation, or when encoded in base 64, as 3 characters.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StelFoog/chess-state.git"
+  },
+  "keywords": [
+    "chess",
+    "state"
+  ],
+  "author": "Samuel H.E. Larsson",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/StelFoog/chess-state/issues"
+  },
+  "homepage": "https://github.com/StelFoog/chess-state#readme"
+}

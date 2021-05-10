@@ -2,7 +2,11 @@
 
 MSCS is a way to store any legal state of chess wich can occur during a game as a 192-bit representation, or when encoded in base 64, as 3 characters.
 
-This project will, along with an explanation of how the algorithm functions, implement a chess game which will update in real time what the state is acording to the algortihm and a converter which can take chess moves from a game and convert them to a state showing the final state of the board, take a MSCS-code and create the accompaniyng board.
+This project will, along with an explanation of how the algorithm functions, implement a chess game which will update in real time what the state is acording to the algortihm and a converter which can take chess moves from a game and convert them to a state showing the state of the board, take a MSCS-code and create the accompaniyng board.
+
+The game is intended to be inplemented with chess.js and chessboard.js to simplify the process and focus the scope.
+
+The project is also intended to be able to take a fen-string and convert it to a MSCS-code and vice versa.
 
 ## Encoding
 
@@ -25,8 +29,8 @@ Where `x` represents the color bit
 0     - Empty space (Min 32 on the board, or ½)
 1000x - Pawn (Max 16 on the board, or ¼)
 1001  - King (Max 2 on the board)
-1010x  - Queen (Max 18 on the board)
-1011x  - Bishop (Max 20 on the board)
+1010x - Queen (Max 18 on the board)
+1011x - Bishop (Max 20 on the board)
 110x  - Knight (Max 20 on the board)
 111x  - Rook (Max 20 on the board)
 ```
@@ -35,3 +39,5 @@ In the worst case (i.e. the case where the most bits possible are used) we have 
 ## Issues
 
 Currently there are inefficencies. The "pawn has moved two spaces"-bit is not needed and could be determined entirely based on the 3 following bits. Currently we allow pawns on rows 1 and 8 where they can never stand, a separate table for those rows could save some room. The ultimate goal would be to reach a 160-bit state, although how fesible that is in reality is still uncertain.
+
+An additional 6 bits would be needed to keep track of the fifty-move clock.
